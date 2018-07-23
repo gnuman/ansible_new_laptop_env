@@ -12,6 +12,7 @@
       - hunspell-mr
       - nodejs
       - gitg
+      - gnome-tweak-tool
 
   - name: Install dnf-plugins-core to manage DNF repository
     dnf:
@@ -43,4 +44,11 @@
     with_items:
       - vlc
       - python-vlc
+  
+  - name: 'enable yarn repo'
+    shell: 'curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo'
+  
+  - name: 'install yarn'
+    dnf:
+      name: yarn
   
