@@ -12,7 +12,6 @@
       - hunspell-mr
       - nodejs
       - gitg
-      - ngrok
 
   - name: Install dnf-plugins-core to manage DNF repository
     dnf:
