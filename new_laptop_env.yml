@@ -13,6 +13,10 @@
       - nodejs
       - gitg
       - gnome-tweak-tool
+      - postgresql-server   # These postgres needed for node postgres
+      - postgresql-contrib
+      - postgres-devel
+      - gcc-c++
 
   - name: Install dnf-plugins-core to manage DNF repository
     dnf:
