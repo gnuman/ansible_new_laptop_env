@@ -1,0 +1,47 @@
+- name: Setup new laptop env
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: Install dev packages
+    dnf:
+      name: '{{ item }}'
+    with_items:
+      - emacs
+      - '@development-tools'
+      - ibus-typing-booster
+      - hunspell-mr
+      - nodejs
+      - gitg
+      - ngrok
+
+  - name: Install dnf-plugins-core to manage DNF repository
+    dnf:
+      name:  dnf-plugins-core
+      state: present
+
+  - name: Add docker repo
+    shell:  'sudo dnf config-manager \
+      --add-repo \
+      https://download.docker.com/linux/fedora/docker-ce.repo'
+
+  - name: Update dnf package index
+    dnf:
+     name: docker-engine
+     state: latest
+  
+  - name: Install docker compose
+    shell:  'sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose'
+
+  - name: Giving exex permission to docker cpmpose
+    shell:  'sudo chmod +x /usr/local/bin/docker-compose'
+
+  - name: 'Enable rpm fusion repo'
+    shell: 'sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y'
+  
+  - name: Install Media packages
+    dnf:
+      name: '{{ item }}'
+    with_items:
+      - vlc
+      - python-vlc
+  
