@@ -17,6 +17,10 @@
       - postgresql-contrib
       - postgres-devel
       - gcc-c++
+      - terminator
+      - android-tools
+      - usbutils
+      - azureus
 
   - name: Install dnf-plugins-core to manage DNF repository
     dnf:
