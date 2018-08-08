@@ -1,0 +1,78 @@
+[global_config]
+  suppress_multiple_term_dialog = True
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_window = True
+      maximised = False
+      order = 0
+      parent = ""
+      position = 26:23
+      size = 1868, 1017
+      title = king_of_nerds@localhost:~
+      type = Window
+    [[[child1]]]
+      active_page = 2
+      labels = None, None, None
+      last_active_term = fb436ce4-3ed7-42c1-bc5d-1c23a0a3f068, 7e8a9497-82de-4892-8c31-bea2db590080, f62ba379-e10b-42f8-8a70-717467d60aea
+      order = 0
+      parent = child0
+      type = Notebook
+    [[[child2]]]
+      order = 0
+      parent = child1
+      position = 487
+      ratio = 0.500513874615
+      type = VPaned
+    [[[child3]]]
+      order = 0
+      parent = child2
+      position = 932
+      ratio = 0.50080601827
+      type = HPaned
+    [[[terminal4]]]
+      order = 0
+      parent = child3
+      profile = default
+      command = "cd ~/docker-boilerplates/postgres; echo mypassfromenv | sudo -S docker-compose up"
+      type = Terminal
+      uuid = fb436ce4-3ed7-42c1-bc5d-1c23a0a3f068
+    [[[terminal5]]]
+      order = 1
+      parent = child3
+      profile = default
+      type = Terminal
+      command = "cd ~/docker-boilerplates/mongodb;echo mypassfromenv | sudo -S docker-compose up"
+      uuid = ecb4f90a-00dc-42ed-a3b2-b17a103b1e4c
+    [[[terminal6]]]
+      order = 1
+      parent = child2
+      profile = default
+      command = "redis-server"
+      type = Terminal
+      uuid = 5c4a5d92-dc00-4f73-8374-c77868d6f63a
+    [[[terminal7]]]
+      command = "cd ~/ol_repo/OpenLearningClient;yarn run gulp"
+      order = 1
+      parent = child1
+      profile = default
+      type = Terminal
+      labels = "gulp server"
+      uuid = 7e8a9497-82de-4892-8c31-bea2db590080
+    [[[terminal8]]]
+      command = "cd ~/ol_repo/OpenLearningEngine;. virtualenvwrapper.sh;workon ol;python manage.py runserver 0.0.0.0:8000"
+      order = 2
+      parent = child1
+      profile = default
+      type = Terminal
+      labels = "python server"
+      uuid = f62ba379-e10b-42f8-8a70-717467d60aea
+[plugins]
+[profiles]
+  [[default]]
+    cursor_color = "#aaaaaa"
+    split_to_group = True
+  [[ol]]
+    cursor_color = "#aaaaaa"
