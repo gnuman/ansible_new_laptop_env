@@ -15,7 +15,6 @@
       - gnome-tweak-tool
       - postgresql-server   # These postgres needed for node postgres
       - postgresql-contrib
-      - postgres-devel
       - gcc-c++
       - terminator
       - android-tools
